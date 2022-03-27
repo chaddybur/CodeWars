@@ -1,14 +1,12 @@
-var countSheep = function (num){
-    //your code here
-    let str = ""
-    if( num === 0){
-        console.log("")  
+function positiveSum(arr) {
+    let nums = 0
+    for(i = 0; i < arr.length; i++){
+    
+      if(arr[i] >= 0){
+       nums = nums + arr[i]
+      }
     }
-    else{
-    for (i = 1; i <= num; i++){
-      str += `${i} sheep...`
-      
-    }
-    console.log(str)
-  }};
-  countSheep(5)
+    console.log(nums)
+  }
+
+  positiveSum([1,2,3,4,5])
