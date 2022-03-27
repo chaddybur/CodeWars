@@ -1,11 +1,10 @@
-var SequenceSum = (function() {
-    function SequenceSum() {}
-  
-    SequenceSum.showSequence = function(count) {
-      // for
-        //while
-    };
-  
-    return SequenceSum;
-  
-  })();
+var countSheep = function (num){
+    //your code here
+    let str = ""
+    for (i = 1; i <= num; i++){
+      str += str + `${i} sheep...`
+      
+    }
+    console.log(str)
+  }
+  countSheep(5)
