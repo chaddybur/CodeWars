@@ -1,25 +1,11 @@
-function getMiddle(s)
-{
-  //Code goes here!
-let newArr = s.split("")
-console.log(newArr)
-if(newArr.length % 2 === 0){
-    let mid = newArr.length/ 2
-    let newNew = []
-    newNew.push(newArr[mid-1])
-    newNew.push(newArr[mid])
-    let ans =newNew.join("")
-    console.log(ans)
+function findSum(n) {
+let count = 0
+    for(i = 3; i <= n; i++){
+        if(i % 3 === 0 || i % 5 === 0){
+            count+= i
+        }
+    }
+    console.log(count);
+  }
 
-}
-else{
-    let mid = parseInt(newArr.length / 2)
-    console.log(newArr[mid])
-    
-}
-
-}
-
-
-getMiddle("testings")
-getMiddle("testing")
+  findSum(10)
