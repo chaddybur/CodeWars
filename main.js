@@ -1,11 +1,14 @@
-function findSum(n) {
-let count = 0
-    for(i = 3; i <= n; i++){
-        if(i % 3 === 0 || i % 5 === 0){
-            count+= i
-        }
-    }
-    console.log(count);
-  }
+const sequenceSum = (begin, end, step) => {
+    // May the Force be with you
+    let count = 0
+    let i = begin
+    while(i <= end) {
 
-  findSum(10)
+        count += i
+        i += step
+    }
+        console.log(count)
+}
+    
+
+  sequenceSum(1, 5, 3);
