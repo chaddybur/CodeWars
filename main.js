@@ -1,14 +1,8 @@
-const sequenceSum = (begin, end, step) => {
-    // May the Force be with you
-    let count = 0
-    let i = begin
-    while(i <= end) {
-
-        count += i
-        i += step
+function makeNegative(num) {
+    // Code?
+    if(num < 0){
+      return num
+    }else{
+      return -num
     }
-        console.log(count)
-}
-    
-
-  sequenceSum(1, 5, 3);
+  }
