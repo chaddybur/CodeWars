@@ -1,8 +1,10 @@
-function makeNegative(num) {
-    // Code?
-    if(num < 0){
-      return num
-    }else{
-      return -num
-    }
-  }
+function removeChar(str){
+    //You got this!
+    ans = str.split("")
+    ans.shift();
+    ans.pop();
+    answer = ans.join("");
+   console.log(answer)
+   };
+
+   removeChar("pimpcup")
