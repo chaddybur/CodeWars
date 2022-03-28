@@ -1,8 +1,8 @@
-function solution(str){
-    let ans = str.split("")
-    let answer = ans.reverse()
-    let realAnswer = answer.join("")
-    console.log(realAnswer)
+function boolToWord( bool ){
+    //...
+    if(bool === true){
+      return 'Yes'
+    }else{
+      return 'No'
+    }
   }
-
-  solution("butter")
