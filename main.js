@@ -1,10 +1,8 @@
-function removeChar(str){
-    //You got this!
-    ans = str.split("")
-    ans.shift();
-    ans.pop();
-    answer = ans.join("");
-   console.log(answer)
-   };
+function solution(str){
+    let ans = str.split("")
+    let answer = ans.reverse()
+    let realAnswer = answer.join("")
+    console.log(realAnswer)
+  }
 
-   removeChar("pimpcup")
+  solution("butter")
