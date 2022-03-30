@@ -1,12 +1,9 @@
-var vowelsCount = 0;
-  
-let arr = str.split("")
-for(i=0; i<arr.length; i++){
-  if(arr[i]=== "a" ||arr[i]=== "e" ||arr[i]=== "i" ||arr[i]=== "o" ||arr[i]=== "u"){
-    vowelsCount += 1
+function squareSum(numbers){
+  let thing = 0; 
+  for(i=0; i< numbers.length; i++){
+    thing += numbers[i] ** 2
   }
+  console.log(thing)
 }
-// enter your majic here
 
-return vowelsCount;
-}
+squareSum([1,2,3])
