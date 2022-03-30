@@ -1,9 +1,12 @@
-function repeatStr(n, s) {
-  let ans = ""
-  for(i = 1; i <= n; i++){
-    ans += s
+var vowelsCount = 0;
+  
+let arr = str.split("")
+for(i=0; i<arr.length; i++){
+  if(arr[i]=== "a" ||arr[i]=== "e" ||arr[i]=== "i" ||arr[i]=== "o" ||arr[i]=== "u"){
+    vowelsCount += 1
   }
-  console.log(ans);
 }
+// enter your majic here
 
-repeatStr(5, "s")
+return vowelsCount;
+}
