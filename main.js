@@ -1,9 +1,13 @@
-function squareSum(numbers){
-  let thing = 0; 
-  for(i=0; i< numbers.length; i++){
-    thing += numbers[i] ** 2
+function noSpace(x){
+  let arr = x.split("");
+  console.log(arr)
+  for(i = 0; i < arr.length; i++){
+    if(arr[i]=== " "){
+      arr.splice(i,1)
+      i--
+    }
   }
-  console.log(thing)
-}
+  console.log(arr.join(''))
 
-squareSum([1,2,3])
+}
+noSpace('8 j 8   mBliB8g  imjB8B8  jl  B')
