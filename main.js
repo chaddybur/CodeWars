@@ -1,13 +1,12 @@
-function noSpace(x){
-  let arr = x.split("");
-  console.log(arr)
-  for(i = 0; i < arr.length; i++){
-    if(arr[i]=== " "){
-      arr.splice(i,1)
-      i--
-    }
-  }
-  console.log(arr.join(''))
-
+var isSquare = function(n){
+  if(Math.sqrt(n) % 1 === 0){
+    console.log(true)
+  }else{
+  console.log(false);} // fix me
 }
-noSpace('8 j 8   mBliB8g  imjB8B8  jl  B')
+isSquare(26);
+isSquare(-1);
+isSquare(3);
+isSquare(0);
+isSquare(4);
+isSquare(25);
