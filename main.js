@@ -1,42 +1,33 @@
-/* KATA NAME: COMPLEMENTARY DNA <7 KYU>
+/* CODE WARS: WHO LIKE IT? <6 KYU>
 
+Implement the function which takes an array containing the names of people that like an item. 
+It must return the display text as shown in the examples:
 
-In DNA strings, symbols "A" and "T" are complements of each other, as "C" and "G". 
-You function receives one side of the DNA (string, except for Haskell); you need to 
-return the other complementary side. DNA strand is never empty or there is no DNA at all 
-(again, except for Haskell).
+[]                                -->  "no one likes this"
+["Peter"]                         -->  "Peter likes this"
+["Jacob", "Alex"]                 -->  "Jacob and Alex like this"
+["Max", "John", "Mark"]           -->  "Max, John and Mark like this"
+["Alex", "Jacob", "Mark", "Max"]  -->  "Alex, Jacob and 2 others like this"
+*/
 
-Example: (input --> output)
-A should be T and vice versa
-Same for C and G
-"ATTGC" --> "TAACG"
-"GTAT" --> "CATA"
-dnaStrand []        `shouldBe` []
-dnaStrand [A,T,G,C] `shouldBe` [T,A,C,G]
-dnaStrand [G,T,A,T] `shouldBe` [C,A,T,A]
-dnaStrand [A,A,A,A] `shouldBe` [T,T,T,T]
-A should be T and vice versa
-Same for C and G*/
+//Steps.Long way? 
+// loop through the names array and add if statements for numbers? just if statements? No for loop?
 
-// PREP
-// Already in Array. Just need to map for letters and change? if A then T blah blah blah 
+function likes(names) {
 
-function DNAStrand(dna){
-  //your code here
-  let dnaArr = dna.split("")
-    for(i= 0; i < dnaArr.length; i++){
-      if(dnaArr[i]=== "A"){
-        dnaArr[i] = "T"
-        console.log(dna[i])
-      }else if(dnaArr[i]=== "T"){
-        dnaArr[i] = "A"
-      }else if(dnaArr[i]=== "C"){
-        dnaArr[i] = "G"
-      }else if(dnaArr[i]=== "G"){
-        dnaArr[i] = "C"
+      if(names.length === 0){
+        return `no one likes this`
+
+      }else if(names.length === 1){
+        return `${names[0]} likes this`
+
+      }else if(names.length === 2){
+        return `${names[0]} and ${names[1]} like this`
+      }else if(names.length === 3){
+        return `${names[0]}, ${names[1]} and ${names[2]}like this`
+      }else{
+        return `${names[0]}, ${names[1]} and ${names.length - 2} others like this`
       }
-      
-    }
-    console.log(dnaArr.join(""))
+    
+  
 }
-DNAStrand("AAAA")
