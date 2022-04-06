@@ -16,7 +16,7 @@ function solution(number){
     newArr.push(i)
   }
 }
- let answer = newArr.reduce((a,b) => a + b)
+ let answer = newArr.reduce((a,b) => a + b, 0)
  console.log(answer)
 }
 solution(10)
