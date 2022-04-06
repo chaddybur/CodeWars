@@ -1,33 +1,24 @@
-/* CODE WARS: WHO LIKE IT? <6 KYU>
+/* CODE WARS: Multiples of 3 or 5 <6 KYU>
+If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. 
+The sum of these multiples is 23.
+Finish the solution so that it returns the sum of all the multiples of 3 or 5 below the number passed in. 
+Additionally, if the number is negative, return 0 (for languages that do have them).
 
-
+Note: If the number is a multiple of both 3 and 5, only count it once.
 */
-// 8. Reduce Exercise
-    // Sum up the instances of each of these
-    /*const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck', 'pogostick'];
+function solution(number){
+  if(number <= 0){
+    return 0;
+  }
+  let newArr = []
+    for(i = 1; i < number; i++){
+  if(i % 3 ===0 || i % 5 === 0){
+    newArr.push(i)
+  }
+}
+ let answer = newArr.reduce((a,b) => a + b)
+ console.log(answer)
+}
+solution(10)
 
-    const transportation = data.reduce(function(obj, item) {
-      if (!obj[item]) {
-        obj[item] = 0;
-      }
-      obj[item]++;
-      return obj;
-    }, {});
-
-    console.log(transportation); 
-    
-    HAD TO LOOK UP AGAIN HOW TO USE REDUCE TO COUNT. ADDED TO ANKI*/
-
-    function count (string) {  
-      newArr = string.split("")
-
-      let answer = newArr.reduce(function(obj, item){
-        if(!obj[item]){
-          obj[item] = 0 
-        }
-        obj[item]++;
-        return obj;
-      }, {})
-      // The function code should be here
-       return answer;
-    }
+// FIRST ATTEMPT PASSED TEST BUT FAILED ATTEMPT
