@@ -1,15 +1,8 @@
-
-let newNewArr = []
-function removeEveryOther(arr){
-  //your code here
-  let newArr = []
-  for(i=0; i < arr.length; i++){
-    if(i % 2 === 0){
-      newArr.push(arr[i])
-    }
-    
-  }console.log(newArr)
-  console.log(arr)
+//8 Kyu easy peasy
+function isDivisible(n, x, y) {
+  if(n % x === 0 && n % y === 0){
+    return true
+  }else{
+    return false
+  }
 }
-
-removeEveryOther(["bob", "dave", "joe", "smith"])
