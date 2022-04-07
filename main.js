@@ -1,8 +1,18 @@
-//8 Kyu easy peasy
-function isDivisible(n, x, y) {
-  if(n % x === 0 && n % y === 0){
-    return true
+
+function maskify(cc) {
+  let creditArr = cc.split("");
+  if( creditArr.length <= 4){
+    let answer = creditArr.join("")
+    return answer
   }else{
-    return false
+    for(i= 0; i<(creditArr.length - 4); i++){
+      creditArr[i] = '#'
+    }
+    console.log(creditArr.join(""))
   }
+
+  
+  
+
 }
+maskify('4556364607935616')
