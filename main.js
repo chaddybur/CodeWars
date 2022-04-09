@@ -1,22 +1,13 @@
-function findOdd(A) {
-	let newArr = []
-  let newObj = A.reduce(function(obj, item){
-		if (!obj[item]) {
-        obj[item] = 0;
-      };
-      obj[item]++;
-      return obj;
-    }, {});
-  console.log(newObj)
-  let newKeys = []
-  newKeys = Object.keys(newObj)
-  console.log(newKeys)
- newArr = Object.values(newObj)
+function spinWords(string){
+  //TODO Have fun :)
+  let newArr = string.split(" ")
   console.log(newArr)
-for(i = 0; i < newArr.length; i++){
-  if(newArr[i] % 2 !== 0){
-    return parseInt(newKeys[i])
-  }
-}
+  for(i = 0; i < newArr.length; i++){
+    if(newArr[i].length >= 5 ){
+       newArr[i]= newArr[i].split("").reverse().join("")
+    }
   
+  }
+  return newArr.join(' ')
 }
+spinWords("Welcome to Door County")
