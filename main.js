@@ -7,7 +7,7 @@ Examples
 "(( @"     =>  "))((" 
 */
 function duplicateEncode(word){
-  let arr = word.split("");
+  let arr = word.toLowerCase().split("");
 let multiples = []
 let answer = []
 console.log(arr)
@@ -53,6 +53,6 @@ console.log(arr.join(""))
 }
 
 
-duplicateEncode("recede")
+duplicateEncode(" ( ( )")
 
 //"()()()"
