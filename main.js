@@ -1,30 +1,25 @@
-/* <6 KYU> UNIQUE IN ORDER
-Implement the function unique_in_order which takes as argument a 
-sequence and returns a list of items without any elements with 
-the same value next to each other and preserving the original order of elements.*/
-
-var uniqueInOrder=function(iterable){
-  let newArr = [];
+function arrayDiff(a, b) {
+  let answer = [];
+  let newStr = 	a.join("") + b.join("")
   
-  if(typeof iterable === "string"){
-    newArr = iterable.split("")
-  }else{
-    newArr = iterable
-  }
-  for(i = 0; i < (newArr.length - 1); i++){
-    if(newArr[i]=== newArr[i+1]){
-      newArr.splice((i+1), 1);
-      i--
-    }
-  }
-  console.log(newArr)
+  let newArr = newStr.split("")
+ 
+  let newObj = newArr.reduce(function(obj, item){
+    	if (!obj[item]) {
+        obj[item] = 0;
+      }
+      obj[item]++;
+      return obj;
+    }, {});
 
+  let vals = Object.values(newObj);
+  let keys = Object.keys(newObj);
+  for(i = 0; i < vals.length; i++){
+  if(vals[i] === 1){
+    answer.push(parseInt(keys[i]))
+  }
+  
 }
-uniqueInOrder('AAAABBBCCDAABBB')
-uniqueInOrder('ABBCcAD') 
-uniqueInOrder([1,2,2,3,3])
-
-
-/*uniqueInOrder('AAAABBBCCDAABBB') == ['A', 'B', 'C', 'D', 'A', 'B']
-uniqueInOrder('ABBCcAD')         == ['A', 'B', 'C', 'c', 'A', 'D']
-uniqueInOrder([1,2,2,3,3])       == [1,2,3] */
+  return answer;
+}
+arrayDiff([1,2,2], [1]);
