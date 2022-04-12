@@ -1,25 +1,26 @@
-function arrayDiff(a, b) {
-  let answer = [];
-  let newStr = 	a.join("") + b.join("")
+function digital_root(n) {
   
-  let newArr = newStr.split("")
- 
-  let newObj = newArr.reduce(function(obj, item){
-    	if (!obj[item]) {
-        obj[item] = 0;
-      }
-      obj[item]++;
-      return obj;
-    }, {});
-
-  let vals = Object.values(newObj);
-  let keys = Object.keys(newObj);
-  for(i = 0; i < vals.length; i++){
-  if(vals[i] === 1){
-    answer.push(parseInt(keys[i]))
+  let ans = 0
+function splitAndAdd(x){
+  let arr = []
+  let numArr = []
+  if(typeof x === "number"){
+    arr = x.toString().split("")
+  }else{
+    arr = x
   }
-  
+	arr.forEach((e) => numArr.push(parseInt(e)));
+   console.log(numArr)
+  ans = numArr.reduce((a,b)=> a+b, 0)
+  return ans 
 }
-  return answer;
+  splitAndAdd(n)
+while(ans > 9){
+  splitAndAdd(ans)
+  console.log(ans)
 }
-arrayDiff([1,2,2], [1]);
+  return ans
+}
+
+
+digital_root(4560823094828)
