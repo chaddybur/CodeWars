@@ -1,21 +1,47 @@
-/*<8 Kyu> Calculate BMI
-Write function bmi that calculates body mass index (bmi = weight / height2).
-if bmi <= 18.5 return "Underweight"
-if bmi <= 25.0 return "Normal"
-if bmi <= 30.0 return "Overweight"
-if bmi > 30 return "Obese"
- */
+/*<6 Kyu> Dashatize it
+Given a variable n,
 
-function bmi(weight, height) {
-  let bodyMass = weight/ (height **2)
-  if (bodyMass <= 18.5){
-    return "Underweight"
-  }else if(bodyMass <= 25){
-    return "Normal"
-  }else if( bodyMass <= 30){
-    return "Overweight"
-  } else{
-    return "Obese"
+If n is an integer, Return a string with dash'-'marks before and after each odd integer, but do not begin or end the string with a dash mark. If n is negative, then the negative sign should be removed.
+
+If n is not an integer, return an empty value.
+
+Ex:
+
+dashatize(274) -> '2-7-4'
+dashatize(6815) -> '68-1-5'*/
+
+function dashatize(num) {
+  //get 'em
+  if(typeof num !== "number"){
+    return NaN
   }
+  
+  let arr = Math.abs(num).toString().split("")
+ 
+ let newArr = arr.map(e => parseInt(e))
+let lastNum = newArr[newArr.length -1 ]
+console.log(lastNum)
+ if(lastNum % 2 !== 0){
+  newArr[newArr.length -1 ]= "-" + lastNum
+ }else if (newArr[0] % 2 !== 0){
+   newArr[0] = newArr[0] + "-"
+ }
+ console.log(newArr)
+  for (i= 1; i < (newArr.length -1); i++){
+    if(newArr[i] % 2 !== 0){
+      newArr[i] = "-"+ newArr[i]+"-"
+    }
+  }let answerArr = newArr.join("").split("")
+  console.log(answerArr)
+  for(i= 1; i < (answerArr.length - 1); i++){
+    if(answerArr[i] === "-" && answerArr[(i+1)] === "-"){
+      answerArr[i] = ""
+    }
+
 }
-bmi(80, 1.80)
+console.log(answerArr.join(""))
+return answerArr.join("")
+}
+
+dashatize(11327747)
+//2-7-4
