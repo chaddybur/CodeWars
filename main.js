@@ -1,26 +1,19 @@
-function digital_root(n) {
+/*<7 Kyu> Sum of the two lowest positive integers 
+
+Create a function that returns the sum of the two lowest positive numbers given an array of minimum 4 positive integers. No floats or non-positive integers will be passed.
+
+For example, when an array is passed like [19, 5, 42, 2, 77], the output should be 7.
+
+[10, 343445353, 3453445, 3453545353453] should return 3453455.
+*/
+
+function sumTwoSmallestNumbers(numbers) {  
+  //Code here
+  let newArr = numbers.sort((a,b)=> a-b)
+  console.log(newArr)
+  let answer = newArr[0] + newArr[1]
+  console.log(answer)
   
-  let ans = 0
-function splitAndAdd(x){
-  let arr = []
-  let numArr = []
-  if(typeof x === "number"){
-    arr = x.toString().split("")
-  }else{
-    arr = x
-  }
-	arr.forEach((e) => numArr.push(parseInt(e)));
-   console.log(numArr)
-  ans = numArr.reduce((a,b)=> a+b, 0)
-  return ans 
 }
-  splitAndAdd(n)
-while(ans > 9){
-  splitAndAdd(ans)
-  console.log(ans)
-}
-  return ans
-}
-
-
-digital_root(4560823094828)
+sumTwoSmallestNumbers([5, 8, 12, 19, 22])
+sumTwoSmallestNumbers([15, 28, 4, 2, 43])
