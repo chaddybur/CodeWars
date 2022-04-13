@@ -1,19 +1,16 @@
-/*<7 Kyu> Sum of the two lowest positive integers 
+/* <7 Kyu> Friend or Foe 
+Make a program that filters a list of strings and returns a list with only your friends name in it.
+If a name has exactly 4 letters in it, you can be sure that it has to be a friend of yours! Otherwise, you can be sure he's not...
+Ex: Input = ["Ryan", "Kieran", "Jason", "Yous"], Output = ["Ryan", "Yous"]
+i.e.
+friend ["Ryan", "Kieran", "Mark"] `shouldBe` ["Ryan", "Mark"]
+Note: keep the original order of the names in the output.*/
 
-Create a function that returns the sum of the two lowest positive numbers given an array of minimum 4 positive integers. No floats or non-positive integers will be passed.
-
-For example, when an array is passed like [19, 5, 42, 2, 77], the output should be 7.
-
-[10, 343445353, 3453445, 3453545353453] should return 3453455.
-*/
-
-function sumTwoSmallestNumbers(numbers) {  
-  //Code here
-  let newArr = numbers.sort((a,b)=> a-b)
-  console.log(newArr)
-  let answer = newArr[0] + newArr[1]
-  console.log(answer)
+function friend(friends){
   
+  let ansArr = friends.filter(e => e.length === 4 )
+  console.log(ansArr)
+
 }
-sumTwoSmallestNumbers([5, 8, 12, 19, 22])
-sumTwoSmallestNumbers([15, 28, 4, 2, 43])
+
+friend(["Ryan", "Kieran", "Mark"])
