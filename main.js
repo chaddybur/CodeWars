@@ -1,38 +1,19 @@
-/*<5 Kyu> Simple Pig Latin
-Move the first letter of each word to the end of it, then add "ay" to the end of the word. 
-Leave punctuation marks untouched.
+/* <5 Kyu> Move Zeros to the End
+Write an algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.
 
-Examples
-pigIt('Pig latin is cool'); // igPay atinlay siay oolcay
-pigIt('Hello world !');     // elloHay orldway !*/
+moveZeros([false,1,0,1,2,0,1,3,"a"]) // returns[false,1,1,2,1,3,"a",0,0]*/ 
 
-function pigIt(str){
-  //Code here
-  // grab each word into an array
-	let arr = str.split(" ")
-console.log(arr)
-  let newArr = arr.map(e => e.split(""))
-console.log(newArr)
-  //loop over the array to grab the first letter and push it to the back + "ay"
-  let ansArr= ''
-  for(i = 0; i< newArr.length; i++) {
-    if(newArr[i][0] !== '!' && newArr[i][0] !== "." && newArr[i][0] !== "?"){
-    console.log(newArr[i][0])
-    newArr[i].push(newArr[i][0]+'ay')
-    newArr[i].shift(newArr[i][0])
-    newArr[i] = newArr[i].join("")
-  }}
-  
-  console.log(newArr)
-ansArr = newArr.join(" ")
-  
-  console.log(ansArr)
-return ansArr
-  // join the array
-
+function moveZeros(arr) {
+  let counter = 0
+  for(i= 0; i < arr.length - counter; i++){
+    if(arr[i] === 0){
+      arr.push(arr[i])
+      counter += 1
+      arr.splice(i,1)
+    }
+  }
+  console.log(arr)
 }
-pigIt('O termpor o mores .')
-//'Oay', 'emporatay', 'oay', 'oresmay', '!ay'
-//pigIt('Pig latin is cool');
-pigIt('Hello world !');
-//pigIt('This is my string');
+
+
+moveZeros([1,2,0,1,0,1,0,3,0,1])
