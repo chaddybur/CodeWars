@@ -1,27 +1,34 @@
-function duplicateCount(text){
-  //...
-  let arr = text.toLowerCase().split("")
-  console.log(arr)
-  let newObj = arr.reduce(function(obj, item) {
-      if (!obj[item]) {
-        obj[item] = 0;
-      }
-      obj[item]++;
-      return obj;
-    }, {});
-  console.log(newObj)
-  let numArr = Object.values(newObj)
-  console.log(numArr)
-  let counter= 0 
-  for (i = 0; i < numArr.length; i++){
-    if(numArr[i]> 1){
-      counter += 1
+/* <6 KYU> TAKE A TEN MINUTE WALK
+
+You live in the city of Cartesia where all roads are laid out in a perfect grid. 
+You arrived ten minutes too early to an appointment, so you decided to take the opportunity 
+to go for a short walk. The city provides its citizens with a Walk Generating App on their 
+phones -- everytime you press the button it sends you an array of one-letter strings representing 
+directions to walk (eg. ['n', 's', 'w', 'e']). You always walk only a single block for each letter 
+(direction) and you know it takes you one minute to traverse one city block, so create a function 
+that will return true if the walk the app gives you will take you exactly ten minutes (you don't want 
+to be early or late!) and will, of course, return you to your starting point. Return false otherwise.*/
+
+
+function isValidWalk(walk) {
+  //insert brilliant code here
+  let numArr = walk.map(function(e){
+    if(e === "n"){
+      return 1
+    }else if(e === "s"){
+      return -1
+    }else if (e === "w"){
+      return 2
+    }else if(e === "e"){
+      return -2
     }
-  }
-  return counter
- 
+  })
 }
 
-duplicateCount("abbcsdfecsxxxa")
 
-//6 KYU Counting Duplicates
+
+
+isValidWalk(['n','s','n','s','n','s','n','s','n','s']);
+isValidWalk(['w','e','w','e','w','e','w','e','w','e','w','e']);
+isValidWalk(['w']);
+isValidWalk(['n','n','n','s','n','s','n','s','n','s']);
