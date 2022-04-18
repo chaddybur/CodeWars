@@ -1,32 +1,38 @@
-// <6 KYU> Persistent Bugger. FIRST TRY
+/*<5 KYU> Human Readable Time
+Write a function, which takes a non-negative integer (seconds) as 
+input and returns the time in a human-readable format (HH:MM:SS)
 
-function persistence(num) {
-  //code me
- let counter = 0
- let answer = 11
- if (num < 10){
-   return 0
- }else {
-   newArr = num.toString().split("")
-   
-   while(answer > 9){
- 
-    console.log(newArr)
-   answer = newArr.reduce((a,b) => Number(a) * Number(b))
-   newArr = answer.toString().split("")
-   counter += 1
-    console.log(counter)
-    console.log(answer)
-  }
- }
+HH = hours, padded to 2 digits, range: 00 - 99
+MM = minutes, padded to 2 digits, range: 00 - 59
+SS = seconds, padded to 2 digits, range: 00 - 59
+The maximum time never exceeds 359999 (99:59:59)
+
+You can find some examples in the test fixtures.*/
+
+function humanReadable (seconds) {
+  
+  
+  return '';
 }
 
-//persistence(39)
-//3
 
-//persistence(4)
-
-//0
-//persistence(999)
-
-// 2
+humanReadable(0)
+// '00:00:00', 'humanReadable(0)');
+    humanReadable(59)
+    // '00:00:59', 'humanReadable(59)');
+    humanReadable(60)
+    // '00:01:00', 'humanReadable(60)');
+    humanReadable(90)
+    // '00:01:30', 'humanReadable(90)');
+    humanReadable(3599)
+    // '00:59:59', 'humanReadable(3599)');
+    humanReadable(3600)
+    // '01:00:00', 'humanReadable(3600)');
+    humanReadable(45296)
+    // '12:34:56', 'humanReadable(45296)');
+    humanReadable(86399)
+    // '23:59:59', 'humanReadable(86399)');
+    humanReadable(86400)
+    // '24:00:00', 'humanReadable(86400)');
+    humanReadable(359999)
+    // '99:59:59', 'humanReadable(359999)');
