@@ -1,38 +1,21 @@
-/*<5 KYU> Human Readable Time
-Write a function, which takes a non-negative integer (seconds) as 
-input and returns the time in a human-readable format (HH:MM:SS)
-
-HH = hours, padded to 2 digits, range: 00 - 99
-MM = minutes, padded to 2 digits, range: 00 - 59
-SS = seconds, padded to 2 digits, range: 00 - 59
-The maximum time never exceeds 359999 (99:59:59)
-
-You can find some examples in the test fixtures.*/
-
-function humanReadable (seconds) {
+function alphabetPosition(text) {
   
+  let newText = text.toLowerCase()
+  let textArr = newText.split("")
+  let answerArr = []
+  let alphArr = ["a","b","c","d","e","f","g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+ console.log(textArr)
+  for(i= 0; i<textArr.length; i++){
+    for (j = 0; j < alphArr.length; j++){
+      if(textArr[i] === alphArr[j]){
+        answerArr.push(j + 1)
+      }
+    }
+  }console.log(answerArr.join(" "))
   
-  return '';
 }
 
-
-humanReadable(0)
-// '00:00:00', 'humanReadable(0)');
-    humanReadable(59)
-    // '00:00:59', 'humanReadable(59)');
-    humanReadable(60)
-    // '00:01:00', 'humanReadable(60)');
-    humanReadable(90)
-    // '00:01:30', 'humanReadable(90)');
-    humanReadable(3599)
-    // '00:59:59', 'humanReadable(3599)');
-    humanReadable(3600)
-    // '01:00:00', 'humanReadable(3600)');
-    humanReadable(45296)
-    // '12:34:56', 'humanReadable(45296)');
-    humanReadable(86399)
-    // '23:59:59', 'humanReadable(86399)');
-    humanReadable(86400)
-    // '24:00:00', 'humanReadable(86400)');
-    humanReadable(359999)
-    // '99:59:59', 'humanReadable(359999)');
+alphabetPosition("The sunset sets at twelve o' clock.")
+                  //, "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11");
+alphabetPosition("The narwhal bacons at midnight.")
+  //, "20 8 5 14 1 18 23 8 1 12 2 1 3 15 14 19 1 20 13 9 4 14 9 7 8 20");
