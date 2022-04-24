@@ -1,31 +1,22 @@
-// 6 KYU differences in array
+//6 KYU Two to One
 
-function arrayDiff(a, b) {
-
-  if(a.length >= b.length){
-
-  for(i= 0 ; i < a.length; i++){
-    for (j= 0; j < b.length; j++){
-      if (a[i] === b[j]){
-        a.splice(i, 1)
-        i--
-        console.log(a)
+function longest(s1, s2) {
+  // your code
+  let con = s1.concat(s2)
+  let conArr = con.split("")
+  const sorted = conArr.reduce(function(obj, item) {
+      if (!obj[item]) {
+        obj[item] = 0;
       }
-    }
-    
-    }
-    return a
-  }
-    else{
-      for(i= 0 ; i < b.length; i++){
-    for (j= 0; j < a.length; j++){
-       if (b[i] === a[j]){
-        b.splice(i, 1)
-         i--
-    }
-      }
-      }
-  return b
-}}
+      obj[item]++;
+      return obj;
+    }, {});
+  let thing = Object.keys(sorted)
+  console.log(thing)
+  let answer = thing.sort();
+  return answer.join("")
 
-arrayDiff([1,2,3], [1,2])
+}
+
+longest("aretheyhere", "yestheyarehere")
+//, "aehrsty")
