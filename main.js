@@ -1,14 +1,8 @@
-function countBy(x, n) {
-  let z = [];
-	let counter = 0
-  while( z.length < n){
-    counter += x
-    z.push(counter)
-    
-    
-  }
+function removeExclamationMarks(s) {
+  let arr = s.split("")
+console.log(arr)
+let filtered = arr.filter(e => e != "!")
+return filtered.join("")
 
-   console.log(z);
 }
 
-countBy(2,5)
