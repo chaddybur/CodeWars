@@ -1,18 +1,30 @@
-function toCamelCase(str){
-
-  let arr = str.split('')
-  console.log(arr)
-
-  for(i = 0; i < arr.length; i++){
-    if(arr[i] == '_' || arr[i] == '-'){
-      arr[i] = ""
-      arr[i + 1]= arr[i + 1].toUpperCase()
-      console.log(arr[i + 1])
+function productFib(prod){
+  // ...
+  let fib = [0,1,1]
+  let i = 1
+  let ans = []
+  console.log(fib[fib.length- 1])
+  while(fib[fib.length- 1] <= prod){
+    fib.push(fib[i] + fib[i+1])
+    i++
+    
+  }
+  for(i = 0; i < fib.length; i++){
+    if(fib[i] * fib[i+1] == prod){
+      ans.push(fib[i])
+      ans.push(fib[i + 1])
+      ans.push(true)
+      return ans
     }
+  
+  else if(fib[i] * fib[i + 1] > prod){
+    ans.push(fib[i])
+    ans.push(fib[i + 1])
+    ans.push(false)
+    return ans
   }
   
-  console.log(arr.join(""))
-}
 
+}}
 
-toCamelCase("The-Stealth-Warrior")
+productFib(4895)
