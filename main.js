@@ -1,30 +1,12 @@
-function productFib(prod){
-  // ...
-  let fib = [0,1,1]
-  let i = 1
-  let ans = []
-  console.log(fib[fib.length- 1])
-  while(fib[fib.length- 1] <= prod){
-    fib.push(fib[i] + fib[i+1])
-    i++
-    
-  }
-  for(i = 0; i < fib.length; i++){
-    if(fib[i] * fib[i+1] == prod){
-      ans.push(fib[i])
-      ans.push(fib[i + 1])
-      ans.push(true)
-      return ans
-    }
-  
-  else if(fib[i] * fib[i + 1] > prod){
-    ans.push(fib[i])
-    ans.push(fib[i + 1])
-    ans.push(false)
-    return ans
-  }
-  
+function findDifference(a, b) {
+  //loading...
+  let aVol = a.reduce((a,b)=> a*b)
+  let bVol = b.reduce((a,b)=> a*b)
+console.log(Math.abs(aVol - bVol))
+  console.log(aVol, bVol)
+}
 
-}}
 
-productFib(4895)
+findDifference([3, 2, 5], [1, 4, 4])
+
+//, 14)
