@@ -1,12 +1,29 @@
-function findDifference(a, b) {
-  //loading...
-  let aVol = a.reduce((a,b)=> a*b)
-  let bVol = b.reduce((a,b)=> a*b)
-console.log(Math.abs(aVol - bVol))
-  console.log(aVol, bVol)
+function foldArray(array, runs)
+{
+  if(array.length % 2 != 0){
+    let middle = Math.floor(array.length / 2)
+    console.log(middle)
+    let i = 0
+   while(i < middle){
+     
+      array[i] = array[i] + array[array.length -1]
+      array.pop()
+      i++
+    }
+  }else{
+    let middle = Math.floor(array.length / 2)
+    console.log(middle)
+    let i = 0
+   while(i < middle){
+     
+      array[i] = array[i] + array[array.length -1]
+      array.pop()
+      i++
+    }
+  }
+  console.log(array)
 }
 
+input = [ 1, 2, 3, 4, 5, 6];
 
-findDifference([3, 2, 5], [1, 4, 4])
-
-//, 14)
+foldArray(input, 1)
