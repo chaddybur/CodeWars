@@ -1,23 +1,16 @@
-function printerError(s) {
-  let err = ["n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+function shortcut(string) {
+
+  let str = "aeiou"
+  let arr = str.split("")
+  let strArr = string.split("")
   
-  let arr = s.split("")
-  let total = arr.length
-  let counter = 0
-  
-  for(i = 0; i < arr.length; i++){
-    for(j = 0; j < err.length; j++){
-      console.log(arr[i], err[j])
-      if(arr[i] == err[j]){
-        counter += 1
+  for(i = 0; i < strArr.length; i++){
+    for(j = 0; j < arr.length; j++){
+      if(strArr[i] == arr[j]){
+        strArr.splice(i, 1)
+        i--
       }
     }
-   
   }
-
-  console.log(`${counter}/${total}`)
-  return `${counter}/${total}`
+  return strArr.join("")
 }
-
-
-printerError("abctdex")
