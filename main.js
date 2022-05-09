@@ -1,16 +1,23 @@
-function tripleTrouble(one, two, three){
-  //Solution
+function printerError(s) {
+  let err = ["n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
   
-  let arr = []
+  let arr = s.split("")
+  let total = arr.length
+  let counter = 0
   
-  let arr1 = one.split("")
-  let arr2 = two.split("")
-  let arr3 = three.split("")
-  
-  for(i = 0; i < arr1.length; i++){
-    arr.push(arr1[i])
-    arr.push(arr2[i])
-    arr.push(arr3[i])
+  for(i = 0; i < arr.length; i++){
+    for(j = 0; j < err.length; j++){
+      console.log(arr[i], err[j])
+      if(arr[i] == err[j]){
+        counter += 1
+      }
+    }
+   
   }
-  return arr.join("")
- }
+
+  console.log(`${counter}/${total}`)
+  return `${counter}/${total}`
+}
+
+
+printerError("abctdex")
