@@ -1,16 +1,19 @@
-function shortcut(string) {
+function sumMul(n,m){
+  //your idea here
+    if(n < 1 || m < 1){
 
-  let str = "aeiou"
-  let arr = str.split("")
-  let strArr = string.split("")
-  
-  for(i = 0; i < strArr.length; i++){
-    for(j = 0; j < arr.length; j++){
-      if(strArr[i] == arr[j]){
-        strArr.splice(i, 1)
-        i--
-      }
+      console.log("INVALID")
+      return "INVALID"
     }
+    let arr = [];
+    
+    for(i = n; i < m; i += n){
+      arr.push(i)
+    }
+    console.log(arr.reduce((a,b)=> a + b))
+    return arr.reduce((a,b)=> a + b)
   }
-  return strArr.join("")
-}
+
+  sumMul(2,9)
+  //20
+  //,"INVALID")
