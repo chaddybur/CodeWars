@@ -1,19 +1,9 @@
-function sumMul(n,m){
-  //your idea here
-    if(n < 1 || m < 1){
+// add the value "codewars" to the websites array 1,000 times
 
-      console.log("INVALID")
-      return "INVALID"
-    }
-    let arr = [];
-    
-    for(i = n; i < m; i += n){
-      arr.push(i)
-    }
-    console.log(arr.reduce((a,b)=> a + b))
-    return arr.reduce((a,b)=> a + b)
-  }
+let counter = 0
+var websites = []
+while (counter < 1000){
+  websites.push("codewars")
+  counter += 1
+}
 
-  sumMul(2,9)
-  //20
-  //,,,,"INVALID")
