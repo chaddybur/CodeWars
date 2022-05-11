@@ -16,4 +16,4 @@ function sumMul(n,m){
 
   sumMul(2,9)
   //20
-  //,,"INVALID")
+  //,,,,"INVALID")
