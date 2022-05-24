@@ -1,8 +1,14 @@
-function converter (mpg) {
-  //code to convert miles per imperial gallon to kilometers per liter
+function grader(score) {
   
- let num = parseFloat(mpg / 4.54609188 * 1.609344).toFixed(2)
- return Number(num)
+  if(score > 1 || score < .6){
+    return "F"
+  }else if(score >= .9){
+    return "A"
+  }else if(score >= .8){
+    return "B"
+  }else if(score >= .7){
+    return "C"
+  }else if(score >= .6){
+    return "D"
+  }
 }
-
-// checking to see if it works
